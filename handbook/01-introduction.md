@@ -175,11 +175,3 @@ Useful contributions include:
 * documenting open questions
 
 All contributions should aim for clarity, accuracy, neutrality and usefulness. The goal is to help the Bitcoin community understand the design space more clearly.
-
-## Status of the project
-
-This handbook is in an early stage.
-
-The first milestone is to establish the repository, define the scope, add licensing and contribution guidelines, create the initial reading lists, and draft the first chapters. Later milestones will expand the handbook, add proposal explainers, create developer labs, invite technical review and prepare a public versioned release.
-
-The project will evolve as Bitcoin post-quantum discussions evolve. Readers should treat the handbook as a living resource.
