@@ -258,18 +258,15 @@ Schnorr signatures interact naturally with key aggregation, multisignature, thre
 
 BIP340 uses tagged hashes for domain separation. A tagged hash binds a hash operation to a specific context.
 
-\[
-H_{\text{tag}}(x)
+H_(x)
 =
-\operatorname{SHA256}
-\left(
-\operatorname{SHA256}(\text{tag})
-\parallel
-\operatorname{SHA256}(\text{tag})
-\parallel
+SHA256(
+SHA256(tag)
+||
+SHA256(tag)
+||
 x
-\right)
-\]
+)
 
 Different tags are used for different purposes, such as nonce derivation and signature challenges. Domain separation reduces the risk that data created for one cryptographic context is accidentally interpreted as valid data in another context.
 
@@ -338,11 +335,9 @@ SHA-256 produces a 256-bit digest. It is used directly or as part of larger cons
 
 Many traditional Bitcoin identifiers use SHA-256 twice:
 
-\[
-\operatorname{SHA256d}(x)
+SHA256d(x)
 =
-\operatorname{SHA256}(\operatorname{SHA256}(x))
-\]
+SHA256(SHA256(x))
 
 Examples include:
 
@@ -354,11 +349,9 @@ Examples include:
 
 HASH160 combines SHA-256 and RIPEMD-160 hash functions:
 
-\[
-\operatorname{HASH160}(x)
+HASH160(x)
 =
-\operatorname{RIPEMD160}(\operatorname{SHA256}(x))
-\]
+RIPEMD160(SHA256(x))
 
 It produces a 160-bit result. HASH160 is used in constructions such as:
 
