@@ -9,9 +9,12 @@ The goal is not to promote a specific consensus change. The goal is to help Bitc
 
 ## Repository structure
 
-- `reading-list/` — curated learning resources
 - `handbook/` — original handbook chapters
-- `glossary.md` — terminology used in the handbook
+- `reading-list/` — curated learning resources
+- `tables/` — comparison and exposure matrices
+- `labs/` — developer labs and experiment designs
+- `proposal-tracker.md` — Bitcoin PQ proposal tracking
+- `glossary.md` — project terminology
 
 ## Start here
 
@@ -25,7 +28,7 @@ If you are new to the topic, begin with:
 
 ## Current status
 
-Month 1 focus: repository structure, scope, license, contribution guide and first chapters.
+Month 2 focus: Bitcoin quantum-risk model, address-type exposure, UTXO exposure classification and regtest examples.
 
 ## How to contribute
 
