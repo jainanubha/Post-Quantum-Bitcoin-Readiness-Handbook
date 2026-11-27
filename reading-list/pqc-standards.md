@@ -177,3 +177,47 @@ This page focuses on post-quantum cryptographic primitives, especially digital s
 **Difficulty:** Intermediate  
 **Status:** Ongoing standardization effort  
 **Bitcoin relevance:** Bitcoin may not want to commit prematurely to one signature family. Tracking additional signature candidates matters for long-term crypto-agility discussions.
+
+---
+
+### [NIST IR 8547 — Transition to Post-Quantum Cryptography Standards](https://csrc.nist.gov/pubs/ir/8547/final)
+
+**Type:** NIST migration guidance  
+**Difficulty:** Intermediate  
+**Status:** Final — October 2026  
+**Bitcoin relevance:** Provides a framework for understanding cryptographic inventories, transition planning, algorithm retirement and migration dependencies.
+
+**Key takeaway:** NIST's transition methodology is useful for studying Bitcoin migration, but its transition timelines do not automatically apply to Bitcoin's decentralized consensus process.
+
+---
+
+### [NIST IR 8610 — Status Report on the Second Round of Additional Digital Signature Schemes](https://csrc.nist.gov/pubs/ir/8610/final)
+
+**Type:** NIST standardization status report  
+**Difficulty:** Advanced  
+**Status:** Final — May 2026  
+**Bitcoin relevance:** Provides insight into alternative post-quantum signature constructions, security assumptions and trade-offs beyond the initially standardized algorithms.
+
+**Key takeaway:** Additional signature candidates may offer properties relevant to Bitcoin, but advancement in the standardization process does not establish production or consensus readiness.
+
+---
+
+### [NIST SP 800-230 — Additional SLH-DSA Parameter Sets for Limited Signature Use Cases](https://csrc.nist.gov/pubs/sp/800/230/ipd)
+
+**Type:** NIST draft recommendation  
+**Difficulty:** Advanced  
+**Status:** Initial public draft — April 2026  
+**Bitcoin relevance:** Relevant to investigating whether limited-signature constructions can be safely adapted to Bitcoin's UTXO-based authorization model.
+
+**Key takeaway:** A UTXO being spendable only once does not imply that its associated signing key is used only once. Transaction replacement, recovery and multiple signing devices must also be considered.
+
+---
+
+### [NIST SP 800-227 — Recommendations for Key-Encapsulation Mechanisms](https://csrc.nist.gov/pubs/sp/800/227/final)
+
+**Type:** NIST recommendation  
+**Difficulty:** Intermediate to advanced  
+**Status:** Final — September 2025  
+**Bitcoin relevance:** Provides background for investigating post-quantum secure communication and key establishment outside Bitcoin's transaction authorization mechanism.
+
+**Key takeaway:** Post-quantum key establishment and post-quantum transaction signatures address different cryptographic requirements.
