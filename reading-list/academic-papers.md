@@ -217,3 +217,123 @@
 **Difficulty:** Advanced  
 **Bitcoin relevance:** General PQC reference.  
 **Key takeaway:** Not Bitcoin-specific, but useful for developing a deeper cryptographic foundation.
+
+---
+
+## Migration and recovery foundations
+
+### [Or Sattath and Shai Wyborski — Protecting Quantum Procrastinators with Signature Lifting: A Case Study in Cryptocurrencies](https://arxiv.org/abs/2303.06754)
+
+**Type:** Preprint (arXiv; see also ePrint 2023/362)  
+**Year:** 2023  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Investigates upgrading deployed signature schemes via signature lifting, including cryptocurrency holders who have not migrated.  
+**Key takeaway:** Identify the exact one-way relation and secret needed for recovery; a compromised classical key alone is not independent evidence.
+
+**Read for:** Signature and seed lifting; canary assumptions; recovery eligibility; compare with the BIP32/BIP86 proof discussion.
+
+**Related handbook chapters:** 13.
+
+---
+
+### [Eli Ben-Sasson, Iddo Bentov, Yinon Horesh and Michael Riabzev — Scalable, transparent, and post-quantum secure computational integrity](https://eprint.iacr.org/2018/046)
+
+**Type:** Research report / ePrint 2018/046  
+**Year:** 2018  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Background on transparent proof systems for proving computation, relevant to proposed seed-knowledge recovery.  
+**Key takeaway:** A general proof system is not a complete Bitcoin recovery protocol: the relation, parameters, message binding and verification budget must be separately specified.
+
+**Read for:** Proof soundness; transparency; zero-knowledge; quantum assumptions; verifier cost.
+
+**Related handbook chapters:** 13.
+
+---
+
+### [Kigen Fukuda and Shin’ichiro Matsuo — Formalizing PQC Signature Transition: Case of PoW Blockchain Against On-Spend Attack](https://opencryptology.org/2026/952)
+
+**Type:** Research preprint / ePrint 2026/952  
+**Year:** 2026  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Models signature transition liveness in proof-of-work under a quantum adversary capable of forging transactions after exposure.  
+**Key takeaway:** Use the stated round-based and mining assumptions when comparing transition guarantees; the result is not a universal calendar deadline.
+
+**Read for:** Migration liveness; adversary delay; honest mining probability; implications for short-exposure mitigation.
+
+**Related handbook chapters:** 07, 13.
+
+---
+
+### [Suwichai Phunsa and Thawatchai Chomsiri — Point Estimates Understate Quantum Theft Risk in Bitcoin: A Distributional Race Model for Commit–Delay–Reveal](https://doi.org/10.3390/jcp6050162)
+
+**Type:** Journal article, Journal of Cybersecurity and Privacy 6(5), 162  
+**Year:** 2026 (September 15)  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Examines stochastic key-recovery time, block arrival and migration races, extending point-estimate analyses.  
+**Key takeaway:** Under the paper’s assumptions, averaging attack times before calculating risk can underestimate it. Treat numerical results as model-dependent.
+
+**Read for:** Distributional modelling; commit-delay-reveal timing; reorg and fee competition; model validation and limitations.
+
+**Related handbook chapters:** 07, 11, 13.
+
+---
+
+## Bitcoin-specific post-quantum signature analysis
+
+### [Mikhail Kudinov and Jonas Nick — Hash-based Signature Schemes for Bitcoin](https://eprint.iacr.org/2025/2203)
+
+**Type:** Research report / ePrint 2025/2203  
+**Year:** 2025  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Surveys hash-based signatures and explores parameter choices for Bitcoin-specific authorization workloads.  
+**Key takeaway:** The size benefit of limited-use or stateful designs depends on enforced usage assumptions, not simply the UTXO model.
+
+**Read for:** WOTS variants; stateless and stateful signatures; parameter selection; SHRINCS; signing-budget trade-offs.
+
+**Related handbook chapters:** 09–11.
+
+---
+
+### [Dmytro Zakharov, Mikhail Kudinov, Viktoria Balatska and Yaroslava Chopa — Lattice-based Signature Schemes for Bitcoin](https://eprint.iacr.org/2026/1628)
+
+**Type:** Research report / ePrint 2026/1628  
+**Year:** 2026  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Reviews Dilithium, Falcon and Hawk with attention to Bitcoin-specific deployment constraints.  
+**Key takeaway:** Assess combined public-key and signature size, long-term security targets, implementation complexity and wallet derivation together.
+
+**Read for:** Signature constructions; on-chain footprint; hardware signing; wallet derivation; comparison with hash-based alternatives.
+
+**Related handbook chapters:** 09–11.
+
+---
+
+## Multiparty and threshold signatures
+
+### [Rafael del Pino et al. — Threshold Raccoon: Practical Threshold Signatures from Standard Lattice Assumptions](https://eprint.iacr.org/2024/184)
+
+**Type:** Research paper / ePrint 2024/184  
+**Year:** 2024  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Studies lattice-based threshold authorization and its communication and signature-size trade-offs.  
+**Key takeaway:** A threshold construction must be compared independently of the single-signer ML-DSA encoding; it is not automatically compatible with a standardized verifier.
+
+**Read for:** Threshold security; signer count; communication; key setup; verification format; operational resilience.
+
+**Related handbook chapters:** 10.
+
+---
+
+### [Rafael del Pino and Guilhem Niot — Finally! A Compact Lattice-Based Threshold Signature](https://eprint.iacr.org/2025/872)
+
+**Type:** Research paper / ePrint 2025/872  
+**Year:** 2025  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Investigates compact lattice threshold signatures, a direction relevant to distributed Bitcoin custody.  
+**Key takeaway:** Evaluate the supported thresholds and security model before extrapolating signature savings to arbitrary wallet policies.
+
+**Read for:** Threshold limits; signing rounds; signature compression; verifier requirements; security assumptions.
+
+**Related handbook chapters:** 10.
+
+---

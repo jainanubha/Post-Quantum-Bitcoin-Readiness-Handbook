@@ -41,3 +41,25 @@ Status: First-iteration documentation prepared; technical review and integration
 - Fee sensitivity analysis
 - Block-space and migration scenarios
 - Mathematical specification of a transaction-weight and fee estimator
+
+## Month 4: Bitcoin Post-Quantum Proposals and Migration
+
+Status: In progress — first-iteration chapters and comparison tables prepared.
+
+- Chapter 12 — BIP360: Pay-to-Merkle-Root (P2MR)
+- Chapter 13 — BIP361: Post-Quantum Migration and Legacy-Signature Sunset
+
+### Comparative and analytical resources
+
+- P2TR, P2WSH and P2MR comparison
+- BIP360 and BIP361 comparison
+- Post-quantum migration strategy comparison
+- Legacy UTXO migration and recovery matrix
+
+### Research deliverables
+
+- Expand Bitcoin post-quantum proposal tracker
+- Document proposal dependencies and limitations
+- Consolidate open research questions
+- Update Bitcoin post-quantum proposals and discussions reading list
+- Update academic reading list
