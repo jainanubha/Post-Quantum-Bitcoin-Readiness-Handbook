@@ -101,3 +101,35 @@ A proposed Bitcoin output construction described in BIP360 that commits directly
 ### Legacy-Signature Sunset
 
 A proposed transition process for restricting or eventually discontinuing quantum-vulnerable signature mechanisms. BIP361 discusses such a transition in the context of Bitcoin migration.
+
+### Knowledge Asymmetry
+
+A difference in available information between a legitimate holder and an attacker. In post-quantum Bitcoin recovery, the legitimate holder may possess seed material or other independent secrets that are unavailable to an attacker who has recovered a vulnerable elliptic-curve private key.
+
+### Quantum-Safe Rescue Protocol
+
+A proposed authorization mechanism intended to enable legitimate holders to recover legacy funds without relying exclusively on quantum-vulnerable signatures.
+
+### Migration Window
+
+The period during which users are expected or incentivized to transfer funds from vulnerable spending mechanisms to safer authorization mechanisms.
+
+### Dormant UTXO
+
+An unspent transaction output that has remained unspent for an extended period. Dormancy does not establish that its associated private keys are lost or inaccessible.
+
+### Collective Cryptographic Risk
+
+The systemic risk arising from continued dependence on vulnerable cryptographic mechanisms across a shared network, including potential consequences for participants who have individually migrated.
+
+### Commit-Reveal
+
+A protocol in which a participant first publishes a cryptographic commitment to information and later reveals information that can be checked against that commitment. Proposed migration mechanisms investigate its use in reducing certain quantum-related spending risks.
+
+### Hourglass
+
+A proposed Bitcoin spending restriction intended to limit the rate at which specified vulnerable legacy outputs can be spent, potentially reducing the economic disruption associated with quantum key recovery. It does not independently distinguish legitimate owners from attackers.
+
+### Quantum Canary
+
+A proposed publicly observable mechanism intended to signal developments in quantum cryptanalytic capability. Its usefulness depends on the challenge construction, security assumptions and reliability of the resulting signal.

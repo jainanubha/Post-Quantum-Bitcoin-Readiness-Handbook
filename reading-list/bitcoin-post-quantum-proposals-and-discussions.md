@@ -1,7 +1,5 @@
 # Bitcoin Post-Quantum Proposals and Discussions
 
-**Status:** draft  
-**Last checked:** 2026-07-05  
 **Purpose:** Track Bitcoin-specific post-quantum proposals, draft BIPs, mailing-list threads, Delving Bitcoin discussions, and design debates.
 
 Many of the listed resources here are drafts or forum discussions.
@@ -281,3 +279,139 @@ Use the following labels consistently:
 **Difficulty:** Advanced  
 **Bitcoin relevance:** Discusses hashed public keys, Taproot, and what can remain protected before public keys are revealed.  
 **Key takeaway:** Useful but subtle. Do not summarize casually; distinguish hidden keys, revealed keys, descriptors, address reuse, and key-path spends.
+
+---
+
+## Additional PQ signature integration discussions
+
+### [SHRIMPS](https://delvingbitcoin.org/t/shrimps-2-5-kb-post-quantum-signatures-across-multiple-stateful-devices/2355/1)
+
+**Type:** Delving Bitcoin discussion  
+**Labels:** `discussion`, `hash-based`, `stateful-signatures`, `needs-review`  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Improve backup and multi-device practicality.  
+**Key takeaway:** The March 2026 discussion proposes a compact path whose security depends on a bounded number of device uses. Treat the reported size as parameter-specific.
+
+**Questions to ask while reading:** How many device initializations and compact-path signatures are allowed? What happens when a device loses state? Compare the recovery cost with SHRINCS and SLH-DSA.
+
+**Tracker reference:** PQ-06; [proposal tracker](../proposal-tracker.md).
+
+---
+
+### [OP_CHECKSHRINCS](https://blog.blockstream.com/op_checkshrincs-a-hash-based-signature-opcode-for-post-quantum-bitcoin)
+
+**Type:** Author technical design article  
+**Labels:** `discussion`, `implementation-experiment`, `hash-based`, `opcodes`  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Potential native PQ authorization in script leaves.  
+**Key takeaway:** The article explores an opcode and reports experimental work, not an active Bitcoin consensus rule. Follow the linked specification for later revisions.
+
+**Questions to ask while reading:** How are the signature message and encoding specified? What validation costs and stack limits must change? Can a wallet safely manage fallback signing?
+
+**Tracker reference:** PQ-07; [proposal tracker](../proposal-tracker.md).
+
+---
+
+### [Handling PQ signatures on the stack](https://delvingbitcoin.org/t/handling-pq-signatures-on-the-stack/3128)
+
+**Type:** Delving Bitcoin discussion  
+**Labels:** `discussion`, `bitcoin-core`, `needs-review`  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Representation of large PQ signature data.  
+**Key takeaway:** The November 27 thread is about safely representing larger Script elements. An interpreter optimization by itself does not activate new consensus rules.
+
+**Questions to ask while reading:** How should memory consumption be measured? What constraints prevent adversarial copying and oversized allocations? Which changes are consensus and which are implementation-only?
+
+**Tracker reference:** PQ-08; [proposal tracker](../proposal-tracker.md).
+
+---
+
+## Additional migration and legacy-recovery discussions
+
+### [Hourglass V2](https://delvingbitcoin.org/t/hourglass-v2-update/2246)
+
+**Type:** Draft design discussion  
+**Labels:** `discussion`, `migration`, `controversial`  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Limit pace of potentially disruptive spending.  
+**Key takeaway:** The February 2026 v2 draft adds a net-value cap to the P2PK throughput restriction. The cap does not establish original ownership.
+
+**Questions to ask while reading:** How does throttling affect ordinary owners, fees and waiting time? What happens before activation? Can it coexist with a recovery mechanism?
+
+**Tracker reference:** PQ-10; [proposal tracker](../proposal-tracker.md).
+
+---
+
+### [BIP86 recovery via zk-STARK seed knowledge](https://groups.google.com/g/bitcoindev/c/Q06piCEJhkI)
+
+**Type:** bitcoin-dev discussion with prototype references  
+**Labels:** `discussion`, `implementation-experiment`, `recovery`, `needs-review`  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Potential independent-secret recovery for covered HD wallets.  
+**Key takeaway:** A proof of derivation from secret BIP32 material is one possible source of knowledge asymmetry; a prototype does not define a production rescue rule.
+
+**Questions to ask while reading:** What is the exact proof statement? Which derivation paths and wallet types are covered? What binds the proof to the intended spend? What is disclosed?
+
+**Tracker reference:** PQ-11; [proposal tracker](../proposal-tracker.md).
+
+---
+
+### [Post Quantum Recovery Framework](https://delvingbitcoin.org/t/post-quantum-recovery-framework/3099)
+
+**Type:** Delving Bitcoin discussion  
+**Labels:** `discussion`, `recovery`, `research`  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Clarify what legacy rescue must establish.  
+**Key takeaway:** The November 20 framework provides vocabulary for comparing recovery approaches. It is not a claim that a single rescue mechanism covers all legacy coins.
+
+**Questions to ask while reading:** Which evidence was prepared before a compromise? Which independent secrets could exist without preparation? How are claims authenticated and bound to transactions?
+
+**Tracker reference:** PQ-12; [proposal tracker](../proposal-tracker.md).
+
+---
+
+### [BIP361 + PACTs](https://delvingbitcoin.org/t/a-bitcoin-quantum-roadmap-combining-bip-361-and-pacts-to-preserve-ownership-rights/3122)
+
+**Type:** Delving Bitcoin roadmap discussion  
+**Labels:** `discussion`, `migration`, `controversial`, `recovery`  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Preserve potential claims by owners who commit before compromise.  
+**Key takeaway:** The November 25 thread considers integrating timestamped ownership commitments with restrictions and a maturation period. Its schedule is a proposal, not BIP361 consensus text.
+
+**Questions to ask while reading:** How is a historical address-control claim authenticated? Who determines a registration cutoff? Can a late registrant be distinguished from an attacker?
+
+**Tracker reference:** PQ-13; [proposal tracker](../proposal-tracker.md).
+
+---
+
+### [QSAVE](https://groups.google.com/g/bitcoindev/c/5G38b3JL9fA)
+
+**Type:** bitcoin-dev proposal series  
+**Labels:** `discussion`, `migration`, `recovery`, `controversial`  
+**Difficulty:** Advanced  
+**Bitcoin relevance:** Alternative treatment of unmigrated coins without a simple sunset.  
+**Key takeaway:** QSAVE explores a recovery-output alternative to a simple sunset. See [Bitcoin Optech #430](https://bitcoinops.org/en/newsletters/2026/11/06/) for an overview, then evaluate the original draft material.
+
+**Questions to ask while reading:** What second-factor evidence is accepted? How are recovery outputs enforced? What custody and governance assumptions apply when evidence is unavailable?
+
+**Tracker reference:** PQ-14; [proposal tracker](../proposal-tracker.md).
+
+---
+
+## Research digests and source discovery
+
+### [Bitcoin Optech — Quantum resistance](https://bitcoinops.org/en/topics/quantum-resistance/)
+
+**Type:** Maintained technical topic index  
+**Labels:** `discussion`, `live`  
+**Difficulty:** Intermediate to advanced  
+**Bitcoin relevance:** Useful starting point for following changes in Bitcoin PQ design proposals.  
+**Key takeaway:** Follow the linked original sources and check their revisions. A newsletter or topic summary is secondary evidence, not consensus authority.
+
+### [Bitcoin Optech Newsletter #430 — November 6, 2026](https://bitcoinops.org/en/newsletters/2026/11/06/)
+
+**Type:** Technical newsletter  
+**Labels:** `discussion`, `migration`, `needs-review`  
+**Difficulty:** Intermediate to advanced  
+**Bitcoin relevance:** Covers QSAVE and a separate proof-of-decay idea, among other topics.  
+**Key takeaway:** Compare proposals according to their authorization evidence, spending constraints, legitimate-owner access and economic effects rather than treating all migration restrictions as equivalent.

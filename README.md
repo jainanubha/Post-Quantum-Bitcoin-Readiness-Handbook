@@ -38,7 +38,7 @@ The goal is not to promote a specific consensus change. The goal is to help Bitc
 - [Chapter 10 — Post-Quantum Signature Schemes and Bitcoin Constraints](handbook/10-Post-Quantum%20Signature%20Schemes%20and%20Bitcoin%20Constraints/)
 - [Chapter 11 — Transaction Weight, Fees and Block-Space Implications](handbook/11-Transaction%20Weight%2C%20Fees%20and%20Block-Space%20Implications/)
 
-### Part IV — Bitcoin Post-Quantum Proposals (Planned)
+### Part IV — Bitcoin Post-Quantum Proposals
 
 - Chapter 12 — BIP360: Pay-to-Merkle-Root (P2MR)
 - Chapter 13 — BIP361: Post-Quantum Migration and Legacy-Signature Sunset
@@ -66,6 +66,19 @@ The goal is not to promote a specific consensus change. The goal is to help Bitc
 - [Fee Sensitivity Analysis](tables/pq-fee-sensitivity.md)
 - [Block-Space and Migration Scenarios](tables/pq-block-space-and-migration-scenarios.md)
 
+### Bitcoin post-quantum proposals and migration
+
+- [P2TR, P2WSH and P2MR Comparison](tables/p2tr-p2wsh-p2mr-comparison.md)
+- [BIP360 and BIP361 Comparison](tables/bip360-bip361-comparison.md)
+- [Post-Quantum Migration Strategy Comparison](tables/pq-migration-strategy-comparison.md)
+- [Legacy UTXO Migration and Recovery Matrix](tables/legacy-utxo-migration-and-recovery-matrix.md)
+
+## Research and Proposal Tracking
+
+- [Bitcoin Post-Quantum Proposal Tracker](proposal-tracker.md)
+- [Open Research Questions](research/open-questions.md)
+- [Bitcoin Post-Quantum Proposals and Discussions](reading-list/bitcoin-post-quantum-proposals-and-discussions.md)
+- [Academic Papers](reading-list/academic-papers.md)
 
 ## Start here
 
@@ -87,6 +100,7 @@ Month 2 — September 2026: Bitcoin cryptographic foundations, quantum-risk anal
 
 Month 3 — October 2026: NIST post-quantum standards, signature-scheme evaluation, transaction weight, fees and block-space analysis.
 
+Month 4 — November 2026: BIP360, BIP361, post-quantum migration strategies, legacy UTXO recovery, comparative proposal analysis and expansion of the Bitcoin post-quantum proposal tracker.
 
 ## How to contribute
 
